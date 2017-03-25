@@ -10,6 +10,7 @@ import { ChannelModel } from "app/shared/channel.model";
 export class LayoutComponent implements OnInit {
 
   channels: ChannelModel[] = [];
+  currentQueue: number = 0;
 
   constructor() {
 
@@ -25,7 +26,7 @@ export class LayoutComponent implements OnInit {
   }
 
   nextQueue(channel) {
-    this.channels[channel - 1].currentQueue++;
+    this.channels[channel - 1].currentQueue = ++this.currentQueue;
   }
 
 }
