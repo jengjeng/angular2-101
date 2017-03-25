@@ -8,18 +8,18 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 export class AdminControlsComponent implements OnInit {
 
   @Input() channelCount:number;
-  channels: number[] = [];
+  channelNumbers: number[] = [];
   inputChannel: string = '1';
-  @Output() channel = new EventEmitter();
+  @Output() onChannelSelected = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
-    this.channels = Array.from(Array(this.channelCount).keys()).map(v => v + 1)
+    this.channelNumbers = Array.from(Array(this.channelCount).keys()).map(v => v + 1)
   }
 
   nextQueue() {
-    this.channel.emit(this.inputChannel)
+    this.onChannelSelected.emit(this.inputChannel)
   }
 
 }

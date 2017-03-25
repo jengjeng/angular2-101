@@ -3,5 +3,5 @@
 </div>
 
 
-<app-admin-controls (channel)="nextQueue($event)" [channelCount]=channels.length></app-admin-controls>
+<app-admin-controls (onChannelSelected)="nextQueue($event)" [channelCount]=channels.length></app-admin-controls>
 {{channel}}

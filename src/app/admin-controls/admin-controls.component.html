@@ -1,8 +1,8 @@
 <div class="form-inline">
   <h3>Channel:</h3>
   <select class="form-control" [(ngModel)]="inputChannel">
-  <option *ngFor="let item of channels" [value]=item>{{item}}</option>
-</select>
+    <option *ngFor="let channelNumber of channelNumbers" [value]=channelNumber>{{channelNumber}}</option>
+  </select>
 
   <button type="button" class="btn btn-primary" (click)="nextQueue()">Submit</button>
 </div>
