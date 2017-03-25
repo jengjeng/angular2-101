@@ -1,4 +1,5 @@
-import { Component,Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ChannelModel } from "app/shared/channel.model";
 
 @Component({
   selector: 'app-queue-item',
@@ -7,8 +8,7 @@ import { Component,Input, OnInit } from '@angular/core';
 })
 export class QueueItemComponent implements OnInit {
   constructor() { }
-  @Input() channel: number;
-  @Input() queue: number;
+  @Input() model: ChannelModel;
 
   ngOnInit() {
 

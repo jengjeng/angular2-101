@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
 import { routings } from "app/app.routing";
 import { QueueItemComponent } from './layout/queue-item/queue-item.component';
+import { AdminControlsComponent } from './admin-controls/admin-controls.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
-    QueueItemComponent
+    QueueItemComponent,
+    AdminControlsComponent
   ],
   imports: [
     BrowserModule,

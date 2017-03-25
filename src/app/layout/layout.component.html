@@ -1,6 +1,10 @@
 <p>
   layout works!
 </p>
-<app-queue-item [channel]=1 [queue]=0>
 
-</app-queue-item>
+<div *ngFor="let channel of channels">
+  <app-queue-item [model]=channel></app-queue-item>
+</div>
+
+
+<app-admin-controls></app-admin-controls>
