@@ -13,7 +13,7 @@ export class LayoutComponent implements OnInit {
 
   constructor() {
 
-    for (let i = 1; i <= 12; i++) {
+    for (let i = 1; i <= 16; i++) {
       this.channels.push(new ChannelModel(i.toString(), 0));
     }
 
@@ -22,6 +22,10 @@ export class LayoutComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  nextQueue(channel) {
+    this.channels[channel - 1].currentQueue++;
   }
 
 }

@@ -1,10 +1,7 @@
-<p>
-  layout works!
-</p>
-
-<div *ngFor="let channel of channels">
-  <app-queue-item [model]=channel></app-queue-item>
+<div class="row">
+  <app-queue-item *ngFor="let channel of channels" [model]=channel class="col-xs-3"></app-queue-item>
 </div>
 
 
-<app-admin-controls></app-admin-controls>
+<app-admin-controls (channel)="nextQueue($event)" [channelCount]=channels.length></app-admin-controls>
+{{channel}}

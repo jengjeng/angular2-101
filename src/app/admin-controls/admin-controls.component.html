@@ -1,10 +1,8 @@
-<h3>Channel:</h3>
-<select name="" id="">
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
+<div class="form-inline">
+  <h3>Channel:</h3>
+  <select class="form-control" [(ngModel)]="inputChannel">
+  <option *ngFor="let item of channels" [value]=item>{{item}}</option>
 </select>
 
-<button type="button">Submit</button>
+  <button type="button" class="btn btn-primary" (click)="nextQueue()">Submit</button>
+</div>

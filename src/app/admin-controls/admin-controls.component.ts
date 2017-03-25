@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-admin-controls',
@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminControlsComponent implements OnInit {
 
+  @Input() channelCount:number;
+  channels: number[] = [];
+  inputChannel: string = '1';
+  @Output() channel = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
+    this.channels = Array.from(Array(this.channelCount).keys()).map(v => v + 1)
+  }
+
+  nextQueue() {
+    this.channel.emit(this.inputChannel)
   }
 
 }
