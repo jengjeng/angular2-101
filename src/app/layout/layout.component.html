@@ -1,7 +1,10 @@
+ <select class="form-control" (change)="onChange($event.target.value)">
+    <option *ngFor="let opd of opdRoom"> {{opd}}</option>
+  </select>
+
 <div class="row">
   <app-queue-item *ngFor="let channel of channels" [model]=channel class="col-xs-3"></app-queue-item>
 </div>
 
 
-<app-admin-controls (onChannelSelected)="nextQueue($event)" [channelCount]=channels.length></app-admin-controls>
-{{channel}}
+<app-admin-controls *ngIf="channels.length != 0" (onChannelSelected)="nextQueue($event)" [(channelCount)]="channels.length"></app-admin-controls>

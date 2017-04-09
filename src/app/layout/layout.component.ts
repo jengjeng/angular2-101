@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChannelModel } from "app/shared/channel.model";
+import { QueueService } from "app/layout/shared/Queue.service";
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'app-layout',
@@ -8,18 +10,14 @@ import { ChannelModel } from "app/shared/channel.model";
 })
 
 export class LayoutComponent implements OnInit {
-
+  opdRoom : string[];
   channels: ChannelModel[] = [];
   currentQueue: number = 0;
 
-  constructor() {
-
-    for (let i = 1; i <= 16; i++) {
-      this.channels.push(new ChannelModel(i.toString(), 0));
-    }
-
-    console.log(this.channels)
-
+  constructor(private _queue : QueueService) {
+    this._queue.get.room.list().subscribe((result)=>{
+      this.channels = result.json().filter(r => r)
+    })
   }
 
   ngOnInit() {

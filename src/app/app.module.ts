@@ -9,12 +9,16 @@ import { routings } from "app/app.routing";
 import { QueueItemComponent } from './layout/queue-item/queue-item.component';
 import { AdminControlsComponent } from './admin-controls/admin-controls.component';
 
+import { ThaiDatePipe } from "app/shared/thaidate";
+import { QueueService } from "app/layout/shared/Queue.service";
+
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     QueueItemComponent,
-    AdminControlsComponent
+    AdminControlsComponent,
+    ThaiDatePipe
   ],
   imports: [
     BrowserModule,
@@ -22,7 +26,9 @@ import { AdminControlsComponent } from './admin-controls/admin-controls.componen
     HttpModule,
     routings
   ],
-  providers: [],
+  providers: [
+    QueueService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
